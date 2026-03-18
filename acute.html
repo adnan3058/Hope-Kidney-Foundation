@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acute Kidney Failure - Hope Kidney Foundation</title>
+    <meta name="description" content="Information on acute kidney failure: symptoms, treatment, and recovery.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary: #0B4F6C;
+            --primary-dark: #083b4f;
+            --secondary: #FF6B4A;
+            --secondary-light: #ff8a6f;
+            --accent: #6B9EB0;
+            --cream: #F8F4E9;
+            --dark: #1A2E40;
+            --white: #FFFFFF;
+            --gray: #f5f5f5;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: #fafafa;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--secondary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,74,0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* ===== HEADER (same as preventive) ===== */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .logo-text span {
+            color: var(--secondary);
+            font-weight: 400;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--secondary);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 10;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown-menu li {
+            margin: 0;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 20px;
+        }
+        .donate-btn-nav {
+            background: var(--secondary);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+        }
+        .search-icon a {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-left: 20px;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        .search-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .search-container {
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+        .search-container form {
+            display: flex;
+        }
+        .search-container input {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1.2rem;
+            outline: none;
+        }
+        .search-container button {
+            padding: 0 30px;
+            background: var(--secondary);
+            border: none;
+            border-radius: 0 50px 50px 0;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .close-search {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1579154392128-bf8c7ebee541?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 20px, transparent 20px, transparent 40px);
+            pointer-events: none;
+        }
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+        .page-hero h1 span {
+            color: var(--secondary);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            background: var(--gray);
+            padding: 12px 0;
+        }
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .breadcrumb a:hover {
+            color: var(--secondary);
+        }
+        .breadcrumb span {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+        .main-content {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(11,79,108,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .main-content h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+        }
+        .main-content h2 i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        .main-content h3 {
+            color: var(--secondary);
+            margin: 25px 0 10px;
+        }
+        .main-content p {
+            margin-bottom: 15px;
+        }
+        .main-content ul {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .main-content li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: var(--cream);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-box i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255,107,74,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Image within content */
+        .content-image {
+            margin: 30px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Sidebar (same as preventive) */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+        .sidebar-card {
+            background: linear-gradient(135deg, var(--primary), #1A7F9E);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .sidebar-card::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .sidebar-card h4 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+        }
+        .sidebar-card ul {
+            list-style: none;
+        }
+        .sidebar-card li {
+            margin-bottom: 12px;
+        }
+        .sidebar-card a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+        .sidebar-card a:hover {
+            transform: translateX(5px);
+            color: var(--secondary);
+        }
+        .sidebar-card a i {
+            width: 20px;
+            color: var(--secondary);
+        }
+        .help-card {
+            background: var(--secondary);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .help-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255,107,74,0.3);
+        }
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .help-card .btn {
+            background: var(--primary);
+            color: white;
+            margin-top: 15px;
+        }
+        .help-card .btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ===== FOOTER (same as preventive) ===== */
+        .footer {
+            background: #f8f9fa;
+            color: #333;
+            padding: 50px 0 20px;
+            border-top: 4px solid var(--secondary);
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        .footer-about p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #555;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-contact i {
+            color: var(--secondary);
+            width: 20px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background: var(--white);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-menu li {
+                margin: 10px 0;
+                width: 100%;
+            }
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding-left: 20px;
+                display: none;
+            }
+            .dropdown.open .dropdown-menu {
+                display: block;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+        }
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-contact p {
+                justify-content: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .main-content {
+                padding: 25px;
+            }
+        }
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-kidneys logo-img"></i>
+                        <span class="logo-text">Hope Kidney <span>Foundation</span></span>
+                    </a>
+                </div>
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solution.html">Our Solution</a></li>
+                        <li><a href="centers.html">Dialysis Centers</a></li>
+                        <li class="dropdown">
+                            <a href="kidneys.html" class="dropbtn">Your Kidneys <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="preventive.html">Preventive Care</a></li>
+                                <li><a href="acute.html" class="active">Acute Failure</a></li>
+                                <li><a href="chronic.html">Chronic Disease</a></li>
+                                <li><a href="transplant.html">Kidney Transplant</a></li>
+                                <li><a href="about-kidneys.html">About Kidneys</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="donate.html" class="donate-btn-nav">Donate</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                    <div class="search-icon">
+                        <a href="#" id="search-toggle"><i class="fas fa-search"></i></a>
+                    </div>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-container">
+                <form action="search.html" method="get">
+                    <input type="text" name="q" placeholder="Search for kidney health, dialysis, donations...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <span class="close-search"><i class="fas fa-times"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Acute <span>Kidney Failure</span></h1>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin: 0 8px; color: #999;"></i>
+                <a href="kidneys.html">Your Kidneys</a> <i class="fas fa-chevron-right" style="font-size: 0.8rem; margin: 0 8px; color: #999;"></i>
+                <span>Acute Kidney Failure</span>
+            </div>
+        </div>
+
+        <!-- Main Content + Sidebar -->
+        <section>
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- Left column -->
+                    <div class="main-content">
+                        <h2><i class="fas fa-exclamation-triangle"></i> What is Acute Kidney Failure?</h2>
+                        <p>Acute kidney failure occurs when your kidneys suddenly become unable to filter waste products from your blood. When your kidneys lose their filtering ability, dangerous levels of wastes may accumulate, and your blood's chemical makeup may get out of balance.</p>
+                        <p>Acute kidney failure — also called acute renal failure or acute kidney injury — develops rapidly, usually in less than a few days. Acute kidney failure is most common in people who are already hospitalized, particularly in critically ill people who need intensive care.</p>
+                        <p>Acute kidney failure can be fatal and requires intensive treatment. However, acute kidney failure may be reversible. If you're otherwise in good health, you may recover normal or nearly normal kidney function.</p>
+
+                        <!-- Image: hospital / emergency -->
+                        <div class="content-image">
+                            <img src="Looking-for-the-best-kidney-specialist-in-Chennai_….jpg" alt="Hospital emergency">
+                        </div>
+
+                        <h3><i class="fas fa-list-check"></i> Signs of Acute Kidney Failure</h3>
+                        <p>If you have sudden, severe symptoms, you may recover if treated and hospitalized right away. Look for these signs:</p>
+                        <ul>
+                            <li>Decreased urine output, although occasionally urine output is normal</li>
+                            <li>Fluid retention, causing swelling in your legs, ankles or feet</li>
+                            <li>Shortness of breath</li>
+                            <li>Fatigue</li>
+                            <li>Confusion</li>
+                            <li>Nausea or Weakness</li>
+                            <li>Irregular heartbeat</li>
+                            <li>Chest pain or pressure</li>
+                            <li>Seizures or coma in severe cases</li>
+                        </ul>
+
+                        <h3><i class="fas fa-hospital-user"></i> Treatment</h3>
+                        <p>Treatment for acute kidney failure typically requires a hospital stay. How long you'll stay in the hospital depends on the reason for your acute kidney failure. Your doctor will also work to prevent complications and allow your kidneys time to heal, including:</p>
+                        <ul>
+                            <li><strong>IV Fluids:</strong> If your acute kidney failure is caused by a lack of fluids in your blood, your doctor may recommend intravenous (IV) fluids. In other cases, acute kidney failure may cause you to have too much fluid, leading to swelling in your arms and legs. In these cases, your doctor may recommend medications (diuretics) to cause your body to expel extra fluids.</li>
+                            <li><strong>Medications to control blood potassium:</strong> If your kidneys aren't properly filtering potassium from your blood, your doctor may prescribe calcium, glucose or sodium polystyrene sulfonate to prevent the accumulation of high levels of potassium in your blood. Too much potassium can cause dangerous irregular heartbeats and muscle weakness.</li>
+                            <li><strong>Medications to restore blood calcium levels:</strong> If the levels of calcium in your blood drop too low, your doctor may recommend an infusion of calcium.</li>
+                            <li><strong>Dialysis to remove toxins from your blood:</strong> If toxins build up in your blood, you may need temporary hemodialysis — often referred to simply as dialysis — to help remove toxins and excess fluids from your body while your kidneys heal.</li>
+                        </ul>
+
+                        <h3><i class="fas fa-house-chimney-medical"></i> Recovery at Home</h3>
+                        <p>After hospitalization, your doctor may recommend recovery at home through a special diet, including:</p>
+                        <ul>
+                            <li>Choose lower potassium foods (apples, cauliflower, peppers, grapes, strawberries) instead of high-potassium foods (bananas, oranges, potatoes, spinach, tomatoes).</li>
+                            <li>Avoid products with added salt: frozen dinners, canned soups, fast foods, salty snacks.</li>
+                            <li>Limit phosphorus: whole-grain bread, oatmeal, bran cereals, dark-colored colas, nuts, peanut butter.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Right column: sidebar -->
+                    <aside class="sidebar">
+                        <div class="sidebar-card">
+                            <h4>In This Section</h4>
+                            <ul>
+                                <li><a href="preventive.html"><i class="fas fa-heartbeat"></i> Preventive Care</a></li>
+                                <li><a href="acute.html"><i class="fas fa-exclamation-triangle"></i> Acute Kidney Failure</a></li>
+                                <li><a href="chronic.html"><i class="fas fa-clock"></i> Chronic Kidney Disease</a></li>
+                                <li><a href="transplant.html"><i class="fas fa-hand-holding-heart"></i> Kidney Transplant</a></li>
+                                <li><a href="about-kidneys.html"><i class="fas fa-kidneys"></i> About Kidneys</a></li>
+                            </ul>
+                        </div>
+                        <div class="help-card">
+                            <h4>Need Help?</h4>
+                            <p>If you or a loved one needs kidney care, we're here to help.</p>
+                            <a href="#" class="btn btn-primary">Contact Us</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <h4>Hope Kidney Foundation</h4>
+                    <p>Providing free dialysis and kidney care to low-income families in Pakistan since 1996. Your support saves lives.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solution.html">Our Solution</a></li>
+                        <li><a href="centers.html">Dialysis Centers</a></li>
+                        <li><a href="kidneys.html">Your Kidneys</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 73/4 K Block, DHA Phase 1, Lahore</p>
+                    <p><i class="fas fa-phone-alt"></i> 0300 8449319<br>0300 4586949</p>
+                    <p><i class="fas fa-envelope"></i> hopekidney1996@gmail.com</p>
+                </div>
+                <div class="footer-column footer-hours">
+                    <h4>Dialysis Centers</h4>
+                    <p><i class="fas fa-hospital"></i> Sir Ganga Ram Hospital</p>
+                    <p><i class="fas fa-hospital"></i> Mayo Hospital</p>
+                    <p><i class="fas fa-hospital"></i> Gulab Devi Hospital</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hope Kidney Foundation. All rights reserved. | Registered Charity in Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        dropdowns.forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            if (dropbtn) {
+                dropbtn.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            }
+        });
+
+        // Search overlay
+        const searchToggle = document.getElementById('search-toggle');
+        const searchOverlay = document.getElementById('search-overlay');
+        const closeSearch = document.querySelector('.close-search');
+
+        if (searchToggle) {
+            searchToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                searchOverlay.classList.add('active');
+            });
+        }
+
+        if (closeSearch) {
+            closeSearch.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+            });
+        }
+
+        if (searchOverlay) {
+            searchOverlay.addEventListener('click', (e) => {
+                if (e.target === searchOverlay) {
+                    searchOverlay.classList.remove('active');
+                }
+            });
+        }
+
+        window.copyToClipboard = function(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        };
+    </script>
+</body>
+</html>
