@@ -121,7 +121,6 @@
             align-items: center;
             text-decoration: none;
         }
-        /* Updated logo-img for actual image */
         .logo-img {
             height: 50px;
             width: auto;
@@ -536,80 +535,38 @@
             margin-top: 60px;
         }
         .footer-content {
-            display }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: #f8f9fa;
-            color: #333;
-            padding: 50px 0 20px;
-            border-top: 4px solid var(--secondary);
-            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
         }
-        .footer-content {
-            display: grid: grid;
-            grid-template-columns;
-            grid-template-columns: repeat: repeat(4, (4, 1fr1fr);
-           );
-            gap: 40 gap: 40px;
-px;
-            margin-bottom:            margin-bottom: 40px;
- 40px;
-        }
-        .        }
-        .footer-column h4footer-column h4 {
-            {
-            font-size:  font-size: 1.2rem1.2rem;
-           ;
-            margin-bottom:  margin-bottom: 20px;
-           20px;
-            color: color: var(-- var(--primary);
-            positionprimary);
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
             position: relative;
-           : relative padding-bottom;
-            padding-bottom: : 10px10px;
+            padding-bottom: 10px;
         }
-       ;
-        }
-        .footer-column h .footer-column h4::4::after {
-after {
+        .footer-column h4::after {
             content: '';
-            content: '';
-            position            position: absolute: absolute;
-           ;
-            left: 0 left: 0;
+            position: absolute;
+            left: 0;
             bottom: 0;
             width: 40px;
-;
-            bottom: 0;
-            width: 40px;
-            height:             height: 2px2px;
-            background: var(--;
+            height: 2px;
             background: var(--secondary);
         }
         .footer-about p {
             margin: 15px 0;
-            line-height: 1secondary);
+            line-height: 1.6;
         }
-        .footer-about p {
-            margin: 15px 0;
-            line-height: 1.6.6;
-       ;
+        .footer-links ul {
+            list-style: none;
         }
-        .footer }
-       -links .footer-links ul {
- ul {
-            list            list-style:-style: none;
- none;
-        }
-        .        }
-        .footer-lfooter-links li {
-            margin-bottom: 10px;
-       inks li {
+        .footer-links li {
             margin-bottom: 10px;
         }
-        }
-        .footer .footer-links a {
+        .footer-links a {
             color: #555;
             text-decoration: none;
             transition: var(--transition);
@@ -619,117 +576,57 @@ after {
             padding-left: 5px;
         }
         .footer-contact p {
--links a {
-            color: #555;
-            text-decoration: none;
-            transition: var(--transition);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .footer-links a:hover {
+        .footer-contact i {
             color: var(--secondary);
-            padding-left: 5px;
+            width: 20px;
         }
-        .footer-contact p {
-            margin            margin-bottom:-bottom: 10 10px;
-px;
-            display: flex            display: flex;
-           ;
-            align-items align-items: center: center;
-           ;
-            gap: gap: 10 10px;
-px;
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
-        }
-        .        .footer-contactfooter-contact i {
- i {
-            color: var(--secondary            color: var);
-           (--secondary width:);
-            width: 20 20px;
-        }
-px;
-        }
-        .        .social-links {
-            displaysocial-links {
-            display: flex: flex;
-           ;
-            gap: gap: 15px;
-            margin 15px;
-            margin-top:-top: 20 20px;
-px;
-        }
-        .        }
-        .social-lsocial-links ainks a {
-            {
-            display: display: flex;
- flex;
-            align            align-items:-items: center;
- center;
-            justify            justify-content: center;
--content: center;
-            width            width: : 40px40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            transition: var(--transition);
-;
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
             height: 40px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
             transition: var(--transition);
         }
-        .        }
-        .social-links asocial-links a:hover {
-:hover {
+        .social-links a:hover {
             background: var(--secondary);
-            transform:            background: var(--secondary);
-            transform: translateY translateY(-3px);
-(-3px);
+            transform: translateY(-3px);
         }
-        }
-        .footer-bottom        .footer-bottom {
-            text {
+        .footer-bottom {
             text-align: center;
-           -align: center;
-            padding padding-top-top: : 20px20px;
-           ;
-            border-top:  border-top: 1px1px solid #ddd solid #ddd;
-;
-            color            color: #: #666;
-            font666;
-            font-size: 0-size: 0.9.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
         }
 
-rem;
-        }
-
-        /* =====        /* ===== RESPONSIVE ===== */
-        @ RESPONSIVE ===== */
-        @media (maxmedia (max-width-width: 992px: 992px) {
-            .footer-content) {
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
             .footer-content {
-                grid-template {
-                grid-template-columns: repeat-columns: repeat(2, 1fr);
-            }
-            .nav-menu {
-                display: none;
-                flex-direction: column(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
             .nav-menu {
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                position:;
-                width: 100%;
                 position: absolute;
- absolute;
-                top                top: : 80px;
-               80px;
-                left: left: 0 0;
-               ;
-                background: background: var(-- var(--whitewhite);
-);
-                box-shadow:                box-shadow: 0 0 10 10px 20px rgba(0,0,0,0.1);
+                top: 80px;
+                left: 0;
+                background: var(--white);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 padding: 20px;
             }
             .nav-menu.active {
@@ -740,586 +637,290 @@ rem;
                 width: 100%;
             }
             .dropdown-menu {
-px 20px rgba(0,0,0,0.1);
-                padding: 20px;
-            }
-            .nav-menu.active {
-                display: flex;
-            }
-            .nav-menu li {
-                margin: 10px 0;
-                width: 100%;
-            }
-            .dropdown-menu {
-                position                position: static;
-               : static;
-                opacity: opacity: 1 1;
-                visibility:;
+                position: static;
+                opacity: 1;
                 visibility: visible;
- visible;
-                box                box-shadow: none;
--shadow: none;
-                padding                padding-left:-left: 20px;
- 20px;
-                display                display: none;
-           : none;
+                box-shadow: none;
+                padding-left: 20px;
+                display: none;
             }
-            }
-            .dropdown .dropdown.open ..open .dropdown-menudropdown-menu {
-                display: {
+            .dropdown.open .dropdown-menu {
                 display: block;
- block;
             }
+            .hamburger {
+                display: flex;
             }
-            .            .hamburger {
-hamburger {
-                display                display: flex: flex;
-           ;
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
             }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
             }
-            .h .hamburgeramburger.active .bar:n.active .bar:nth-child(2th-child(2) {
-) {
-                opacity:                 opacity: 0;
-0;
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
             }
-            }
-            .            .hambhamburger.active .barurger.active .bar:nth:nth-child(-child(1)1) {
-                transform: {
-                transform: translateY translateY(8(8px)px) rotate( rotate(45deg);
-           45deg);
-            }
-            .h }
-            .hamburger.active .bar:namburger.active .bar:nth-child(3th-child(3) {
-) {
-                transform                transform: translateY(-: translateY(-8px8px) rotate) rotate(-45deg);
-            }
-(-45deg);
-            }
-            /* Hide            /* Hide text text on mobile on mobile */
-            */
-            .logo .logo-text {
--text {
-                display                display: none: none;
-           ;
+            /* Hide text on mobile */
+            .logo-text {
+                display: none;
             }
         }
-        }
-        }
-        @media (max @media-width: (max-width: 768 768px) {
-           px) {
-            .footer .footer-content {
--content {
-                grid                grid-template-columns: 1-template-columns: 1fr;
-fr;
-                text                text-align:-align: center;
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
- center;
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
-            .            .footer-column h4::afterfooter-column h4::after {
-                {
-                left: left: 50 50%;
-               %;
-                transform: translateX transform:(-50 translateX(-50%);
-%);
+            .footer-contact p {
+                justify-content: center;
             }
+            .social-links {
+                justify-content: center;
             }
-            .footer-contact            .footer-contact p {
- p {
-                justify                justify-content: center;
--content: center;
+            .page-hero h1 {
+                font-size: 2.5rem;
             }
+            .solution-block {
+                padding: 25px;
             }
-                       .social-l .social-links {
-inks {
-                justify-content                justify-content: center;
+            .block-header {
+                flex-direction: column;
+                text-align: center;
             }
-            .: center;
-            }
-            .page-hepage-hero h1 {
-ro h1 {
-                font                font-size:-size: 2 2.5.5rem;
-rem;
-            }
-            }
-            .            .solution-blocksolution-block {
-                padding: {
-                padding: 25 25px;
-px;
-                       }
- }
-            .            .block-headerblock-header {
-                {
-                flex-direction flex-direction: column;
-               : column;
-                text-align text-align: center: center;
-           ;
-            }
-            }
-            .highlight .highlight-box {
--box {
-                flex                flex-direction:-direction: column;
- column;
-                text                text-align: center;
--align:            }
- center;
+            .highlight-box {
+                flex-direction: column;
+                text-align: center;
             }
         }
-        }
-        @media (        @media (max-widthmax-width: 576px) {
-            .page-hero h: 576px) {
+        @media (max-width: 576px) {
             .page-hero h1 {
                 font-size: 2rem;
             }
             .container {
-                padding: 0 1 {
-                font-size: 2rem;
-            }
-            .container {
-                padding: 0 1515px;
+                padding: 0 15px;
             }
             .prevention-item h4 {
                 flex-direction: column;
                 gap: 5px;
             }
             .logo-img {
-                height: 40px;px;
-            }
-            .prevention-item h4 {
-                flex-direction: column;
-                gap: 5px;
-            }
-            .logo-img {
-                height: 40 /* slightly smaller on very small screens */
+                height: 40px; /* slightly smaller on very small screens */
             }
         }
-px; /* slightly smaller on very small screens */
-            }
-        }
-    </    </style>
-style>
+    </style>
 </head>
-<body</head>
 <body>
-   >
-    <header <header class=" class="header">
-       header">
- <div class        <div class="container">
-           ="container">
-            < <divdiv class="header-content">
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
                 <div class="logo">
                     <a href="index.html">
- class="header-content">
-                <div class="logo">
-                    <a href="index.html">
-                        <!--                        <!-- Re Replaced iconplaced icon with actual with actual logo -->
- logo -->
-                                               <img src <img src="logo.svg" alt="Hope Kidney Foundation" class="logo-img">
-                       ="logo.svg" alt="Hope Kidney Foundation" class="logo-img">
+                        <img src="logo.svg" alt="Hope Kidney Foundation" class="logo-img">
                         <span class="logo-text">Hope Kidney <span>Foundation</span></span>
                     </a>
                 </div>
-                <span class="logo-text">Hope Kidney <span>Foundation</span></span>
-                    </a>
-                </div>
-                <nav class <nav class="navbar">
-                   ="navbar">
-                    <ul class=" <ul class="nav-menu">
-                       nav-menu">
-                        <li <li><a><a href=" href="index.htmlindex.html">Home">Home</a></li>
-                        <li><a href="solution.html" class="active">Our</a></li>
-                        <li><a href="solution.html" class="active">Our Solution</ Solution</a></a></li>
-li>
-                                               <li <li><a href="cent><a href="centers.htmlers.html">D">Dialysis Centers</a></li>
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solution.html" class="active">Our Solution</a></li>
+                        <li><a href="centers.html">Dialysis Centers</a></li>
                         <li class="dropdown">
                             <a href="kidneys.html" class="dropbtn">Your Kidneys <i class="fas fa-chevron-down"></i></a>
-ialysis Centers</a></li>
-                        <li class="dropdown">
-                            <a href="kidneys.html" class="dropbtn">Your Kidneys <i class="fas fa-chevron-down"></i></a>
-                                                       <ul class <ul class="dropdown="dropdown-menu">
--menu">
-                                                               <li <li><a href><a href="pre="preventventive.html">ive.html">PreventPreventive Careive Care</a></li>
-                               </a></li>
-                                <li <li><a><a href="acute.html href="acute.html">Ac">Acute Failureute Failure</a</a></li></li>
-                               >
-                                <li <li><a href="><a hrefchronic.html="chronic.html">Chronic Disease</">Chronic Disease</a></a></li>
-li>
-                                                               <li <li><a href><a href="trans="transplant.htmlplant.html">Kid">Kidney Transplant</a></liney Transplant</a></li>
-                                <li><a href="about-kidneys.html">>
-                                <li><a href="about-kidneys.html">About KidAbout Kidneys</neys</a></a></li>
-li>
-                            </                            </ul>
-                       ul>
+                            <ul class="dropdown-menu">
+                                <li><a href="preventive.html">Preventive Care</a></li>
+                                <li><a href="acute.html">Acute Failure</a></li>
+                                <li><a href="chronic.html">Chronic Disease</a></li>
+                                <li><a href="transplant.html">Kidney Transplant</a></li>
+                                <li><a href="about-kidneys.html">About Kidneys</a></li>
+                            </ul>
                         </li>
- </li>
-                        <li                       ><a href <li><a href="don="donate.htmlate.html" class="don" class="donate-btnate-btn-nav">Donate-nav">Donate</a></li</a></li>
->
-                        <li                        <li><a><a href="about.html href="about.html">About">About Us</a></ Us</a></li>
-li>
+                        <li><a href="donate.html" class="donate-btn-nav">Donate</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
-                    </ul>
-                    <div class                    <div class="search="search-icon">
-                       -icon">
-                        <a href="#" id <a href="#" id="search="search-toggle"><i class-toggle"><i class="fas="fas fa-search fa-search"></i"></i></a>
+                    <div class="search-icon">
+                        <a href="#" id="search-toggle"><i class="fas fa-search"></i></a>
                     </div>
                     <div class="hamburger">
                         <span class="bar"></span>
                         <span class="bar"></span>
-                       ></a>
-                    </div>
-                    <div class="hamburger">
                         <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class <span class="bar="bar"></span>
-                   "></span </div>
                     </div>
                 </nav>
-                </nav>
-           >
-            </div </div>
-        </div>
-        <div class="search-over>
-        </div>
-        <div class="search-overlay" id="search-overlay" id="search-overlay">
-lay">
-            <div class            <div class="search="search-container">
-                <form action-container">
-                <form action="search.html" method="="search.html" method="get">
-get">
-                                       <input type <input type="text="text" name" name="q" placeholder="q" placeholder="Search for kidney="Search for kidney health, dialysis, health, dialysis, donations... donations...">
-                   ">
-                    <button type="submit <button type="submit"><i class="fas"><i class="fas fa-search fa-search"></i"></i></button>
-               ></button>
-                </form </form>
-                <span>
-                class=" <span class="close-searchclose-search"><i class"><i class="="fas fa-times"></i></span>
             </div>
         </div>
-    </header>
-
-    <main>
-        <!--fas fa-times"></i></span>
+        <div class="search-overlay" id="search-overlay">
+            <div class="search-container">
+                <form action="search.html" method="get">
+                    <input type="text" name="q" placeholder="Search for kidney health, dialysis, donations...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <span class="close-search"><i class="fas fa-times"></i></span>
             </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        Hero Section -->
-        <section class=" <section class="page-hepage-hero">
-ro">
-                       <div class <div class="container="container">
-               ">
-                <h <h1>1>OurOur <span> <span>Solution</Solution</span></span></h1h1>
-               >
-                <p <p>Solving for affordable kidney healthcare>Solving for affordable kidney healthcare in Pakistan in Pakistan</</p>
-p>
-                       </div </div>
-       >
-        </section </section>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our <span>Solution</span></h1>
+                <p>Solving for affordable kidney healthcare in Pakistan</p>
+            </div>
+        </section>
 
-        <section>
-
-        <section class=" class="solution-contentsolution-content">
-           ">
-            <div <div class=" class="container">
-container">
-                               <div class="intro-text">
- <div class="intro-text">
-                                       <p> <p>KidneyKidney failure is critical and its treatment very expensive. How can we help low failure is critical and its treatment very expensive. How can we help low to middle to middle income families income families with kidney with kidney treatment? treatment? With planning With planning, R, R&D,&D, and science and science, there are solutions.</p, there are solutions>
-               .</p>
-                </div </div>
-
-               >
+        <section class="solution-content">
+            <div class="container">
+                <div class="intro-text">
+                    <p>Kidney failure is critical and its treatment very expensive. How can we help low to middle income families with kidney treatment? With planning, R&D, and science, there are solutions.</p>
+                </div>
 
                 <!-- Prevention Block -->
- <!-- Prevention Block -->
-                               <div class <div class="solution="solution-block">
--block">
-                                       <div class <div class="block="block-header">
--header">
-                                               <div class="block <div class="block-icon-icon"><i class"><i class="fas="fas fa-sh fa-shield-heield-heart"></i></art"></i></div>
-div>
-                                               <h2 <h2>Pre>Prevention</vention</h2h2>
-                   >
-                    </div </div>
-                   >
-                    <p class="block-quote"> <p class="block-quote">PreventionPrevention is the is the best remedy, since best remedy, since the causes the causes of kidney of kidney failure are scientifically proven and avoid failure are scientifically proven and avoidable.</p>
-able.</p>
-                                       <div class <div class="prevention-grid="prevention-grid">
-                       ">
-                        <div class=" <divprevention class="prevention-item">
--item">
+                <div class="solution-block">
+                    <div class="block-header">
+                        <div class="block-icon"><i class="fas fa-shield-heart"></i></div>
+                        <h2>Prevention</h2>
+                    </div>
+                    <p class="block-quote">Prevention is the best remedy, since the causes of kidney failure are scientifically proven and avoidable.</p>
+                    <div class="prevention-grid">
+                        <div class="prevention-item">
                             <i class="fas fa-heart-circle-check"></i>
-                            <h4><i class="                            <i class="fas fa-heart-circle-check"></i>
-                            <h4><i class="fas fafas fa-heart-heart"></i"></i> High> High Blood Pressure</h Blood Pressure</h4>
-4>
-                                                       <p><i class <p><i class="fas="fas fa-leaf"></i fa-leaf"></i> Dam> Damages kidneysages kidneys and can and can be avoided be avoided through a through a healthy diet healthy diet low in low in salt.</ salt.</p>
+                            <h4><i class="fas fa-heart"></i> High Blood Pressure</h4>
+                            <p><i class="fas fa-leaf"></i> Damages kidneys and can be avoided through a healthy diet low in salt.</p>
                         </div>
-                       p>
+                        <div class="prevention-item">
+                            <i class="fas fa-cake-candles"></i>
+                            <h4><i class="fas fa-droplet"></i> Diabetes</h4>
+                            <p><i class="fas fa-apple-alt"></i> Strains the kidneys and can be avoided through diet and exercise.</p>
                         </div>
-                        <div class <div class="pre="prevention-itemvention-item">
-                           ">
-                            <i <i class="fas fa class="fas fa-cake-cake-cand-candles"></les"></i>
-                           i>
- <h4><i                            <h4><i class=" class="fas fa-dfas fa-droroplet"></plet"></i>i> Diabetes</ Diabetes</h4h4>
-                           >
-                            <p><i class="fas <p><i class="fas fa-apple fa-apple-alt"></i> Strains-alt"></i> Strains the kidneys and can the kidneys and can be avoided be avoided through diet and exercise.</p through diet and exercise.</p>
-                       >
-                        </div </div>
-                       >
-                        <div <div class=" class="preventionprevention-item">
--item">
-                                                       <i class <i class="fas="fas fa-person fa-person-running"></i>
--running"></                           i>
-                            <h4 <h4><i><i class=" class="fas fafas fa-person-walking"></i> Healthy Lifestyle</h4>
-                           -person-walking"></i> Healthy Lifestyle</h4>
-                            <p>< <p><i classi class="fas="fas fa-he fa-heart"></iart"></i>> Regular exercise mitigates both high blood pressure Regular exercise mitigates both high blood pressure and diabetes.</p>
-                        </div and diabetes.</p>
-                       >
-                    </div>
-                    </div>
-                    </div>
-                    <p <p><strong><strong>Kidney damage>Kidney damage can't be reversed. But can't be reversed. But it can it can be avoided be avoided.</strong.</strong> And for a> And for a damaged kidney damaged kidney in early stages, in early stages, the rest the rest of the of the kidney can be saved kidney can be saved and further and further damage can damage can be slowed or stopped be slowed or stopped.</p>
-                    <p>Through online presence.</p>
-                    <p>Through online presence, social, social media, media, and education kios and education kiosks atks at medical centers, we medical centers, we educate the educate the public on how to public on how to avoid kidney failure, and how avoid kidney failure, and how to treat to treat kidney ailments kidney ailments to stop further damage to stop further damage.</p.</p>
-                   >
-                    <div style=" <div style="background:background: var(--cream); var(--cream); padding: padding: 30 30px; border-radiuspx; border-radius: 20px: 20px; margin; margin: : 30px 0;30px 0; position position: relative: relative; overflow; overflow: hidden: hidden;">
-                       ;">
-                        <div <div style=" style="position:position: relative; relative; z-index z-index: : 2;">
-2;">
-                                                       <h3 <h3><i><i class=" class="fas fa-book-openfas fa" style-book-open="color: var" style="color: var(--secondary(--secondary); margin); margin-right: 10-right: 10px;"></i>px;"></ Public Educationi> Public Education Literature in Literature in Urdu</h3 Urdu</h3>
-                           >
-                            <p <p>Booklets in>Booklets in easy Urdu easy Urdu language have language have been distributed free of been distributed free of cost to cost to thousands by the foundation thousands by the foundation, in, in order to order to spread awareness. The spread awareness. The literature creates literature creates awareness both awareness both about prevention, as well as about prevention, as well as management of management of kidney disease kidney disease.</p.</p>
-                       >
+                        <div class="prevention-item">
+                            <i class="fas fa-person-running"></i>
+                            <h4><i class="fas fa-person-walking"></i> Healthy Lifestyle</h4>
+                            <p><i class="fas fa-heart"></i> Regular exercise mitigates both high blood pressure and diabetes.</p>
                         </div>
+                    </div>
+                    <p><strong>Kidney damage can't be reversed. But it can be avoided.</strong> And for a damaged kidney in early stages, the rest of the kidney can be saved and further damage can be slowed or stopped.</p>
+                    <p>Through online presence, social media, and education kiosks at medical centers, we educate the public on how to avoid kidney failure, and how to treat kidney ailments to stop further damage.</p>
+                    <div style="background: var(--cream); padding: 30px; border-radius: 20px; margin: 30px 0; position: relative; overflow: hidden;">
+                        <div style="position: relative; z-index: 2;">
+                            <h3><i class="fas fa-book-open" style="color: var(--secondary); margin-right: 10px;"></i> Public Education Literature in Urdu</h3>
+                            <p>Booklets in easy Urdu language have been distributed free of cost to thousands by the foundation, in order to spread awareness. The literature creates awareness both about prevention, as well as management of kidney disease.</p>
                         </div>
-                        <div <div style=" style="position: absolute;position: absolute; top: top: 10px; 10 right:px; right: 10 10px; font-sizepx; font-size: : 5rem5rem; color: rgba; color: rgba(255(255,107,74,107,74,0.1,0.1); pointer-events); pointer-events: none: none;">
-                            <;">
-                            <ii class="fas fa class="fas fa-book"></i>
--book"></i>
-                        </                        </div>
-div>
+                        <div style="position: absolute; top: 10px; right: 10px; font-size: 5rem; color: rgba(255,107,74,0.1); pointer-events: none;">
+                            <i class="fas fa-book"></i>
+                        </div>
                     </div>
-                    </div>
-                </                </div>
-
-                <!--div>
+                </div>
 
                 <!-- Training Block -->
-                Training Block -->
-                <div <div class="solution-block class="solution-block">
-                   ">
-                    <div class=" <div class="block-headerblock-header">
-                        <">
-                       div class="block-icon <div class="block-icon"><i class=""><i class="fas fa-chalkfas fa-chalkboard-user"></iboard-user"></i></div></div>
-                       >
+                <div class="solution-block">
+                    <div class="block-header">
+                        <div class="block-icon"><i class="fas fa-chalkboard-user"></i></div>
                         <h2>Training</h2>
                     </div>
-                    <p <h2>Training</h2>
-                    </div>
-                    <p>Pakistan>Pakistan faces a faces a shortage of shortage of nephrologists, nephrologists, as well as well as general as general physicians trained on kidney disease.</ physicians trained on kidney disease.</p>
-                   p>
-                    <p> <p>Our solutionOur solution is to provide the is to provide the latest information latest information on kidney diseases and treatment innovations to medical students and doctors through seminars, conferences, on kidney diseases and treatment innovations to medical students and doctors through seminars, conferences, and distribution of literature and distribution of literature. We. We also run also run and and provide research facilities provide research facilities in Nephrology.</p>
- in Nephrology.</p>
-                                       <p> <p>We have experience asWe have experience as professors and professors and presenters at presenters at Mayo Hospital, Mayo Hospital, King Edward King Edward Medical College, World Medical College, World Conference of Conference of Nephrology Nephrology, and International Conferences. By broadly training medical students, we can, and International Conferences. By broadly training medical students, we can widely reach the public widely reach the public in prevention, early in prevention, early detection and detection and mitigation, mitigation, and treatment of kidney disease.</p>
- and treatment of kidney disease.</p>
-                    <p>An active center for hands-on                    <p>An active center for hands-on training comes from dialysis centers within medical clinics training comes from dialysis centers within medical clinics and hospitals, of which we and hospitals, of which we have already founded and have already founded and established three centers.</ established three centers.</p>
-p>
+                    <p>Pakistan faces a shortage of nephrologists, as well as general physicians trained on kidney disease.</p>
+                    <p>Our solution is to provide the latest information on kidney diseases and treatment innovations to medical students and doctors through seminars, conferences, and distribution of literature. We also run and provide research facilities in Nephrology.</p>
+                    <p>We have experience as professors and presenters at Mayo Hospital, King Edward Medical College, World Conference of Nephrology, and International Conferences. By broadly training medical students, we can widely reach the public in prevention, early detection and mitigation, and treatment of kidney disease.</p>
+                    <p>An active center for hands-on training comes from dialysis centers within medical clinics and hospitals, of which we have already founded and established three centers.</p>
                 </div>
 
-                </div>
-
-                <!-- Dialysis                <!-- Dialysis Centers & Centers & R&D Block -->
- R&D Block -->
-                               <div class="solution <div class-block">
-="solution-block">
-                                       < <div class="blockdiv class="block-header">
--header">
-                        <div class="block                        <div class="block-icon-icon"><i class"><i class="fas fa-fl="fas fa-flask"></ask"></i></div>
-i></                       div>
-                        <h2>Dialysis Centers <h2>Dialysis Centers & R & R&D</&D</h2h2>
+                <!-- Dialysis Centers & R&D Block -->
+                <div class="solution-block">
+                    <div class="block-header">
+                        <div class="block-icon"><i class="fas fa-flask"></i></div>
+                        <h2>Dialysis Centers & R&D</h2>
                     </div>
-                   >
-                    <div </div>
-                    <div class=" class="cost-comcost-comparisonparison">
-                       ">
-                        <div <div class=" class="cost-cardcost-card">
-                           ">
-                            <h <h4>4>USA</h4>
-                            <pUSA</h4>
-                            <p class=" class="cost-cost-amount">amount">70,70,000 P000 Pkrkr<small>/<small>/yr</yr</small></small></pp>
-                        </>
+                    <div class="cost-comparison">
+                        <div class="cost-card">
+                            <h4>USA</h4>
+                            <p class="cost-amount">70,000 Pkr<small>/yr</small></p>
                         </div>
-div>
-                                               <div class="cost-card">
+                        <div class="cost-card">
                             <h4>Pakistan</h4>
-                            <p class="cost-amount">2,5000 Pkr <div class="cost-card">
-                            <h4>Pakistan</h4>
-                            <p class="cost-amount">2,5000 Pkr<small>/<small>/yr</yr</small></p>
-                        </small></p>
+                            <p class="cost-amount">2,5000 Pkr<small>/yr</small></p>
                         </div>
-                       div>
-                        <div class <div class="cost="cost-card highlight">
-                           -card highlight">
-                            <h <h4>HK4>HKFF Cost</h4 Cost</h4>
-                            <p class=">
-                            <p class="cost-cost-amount">7200amount">7200 Pkr Pkr<small>/yr</small<small>/yr</small></p></p>
+                        <div class="cost-card highlight">
+                            <h4>HKF Cost</h4>
+                            <p class="cost-amount">7200 Pkr<small>/yr</small></p>
                         </div>
                     </div>
-                    <p>By the time the damage reaches end stage kidney failure, the disease is critical and cost of treatment is expensive. In Pakistan, the cost is $2500/yr. For the average lower>
-                        </div>
-                    </div>
-                    <p>By the time the damage reaches end stage kidney failure, the disease is critical and cost of treatment is expensive. In Pakistan, the cost is $2500/yr. For the average lower to middle to middle class family class family making $90 per making $90 per month, this is month, this is unreachable. Insurance coverage is rare.</p>
-                    unreachable. Insurance coverage is rare.</p>
-                    <p><strong>Through scientific <p><strong>Through scientific research (R&D), local low cost manufacturing, and subsidies, Dr. Shak research (R&D), local low cost manufacturing, and subsidies, Dr. Shakoh has reduced treatment to aoh has reduced treatment to a fraction of the cost.</strong> Dr. Shakoh and donors also funded and built dialysis centers, so that fraction of the cost.</strong> Dr. Shakoh and donors also funded and built dialysis centers, so that we do not incur rent or equipment leasing we do not incur rent or equipment leasing costs. Imagine how costs. Imagine how with just $60 (15,000 rupees), you can provide haemodialysis for a month.</p>
+                    <p>By the time the damage reaches end stage kidney failure, the disease is critical and cost of treatment is expensive. In Pakistan, the cost is $2500/yr. For the average lower to middle class family making $90 per month, this is unreachable. Insurance coverage is rare.</p>
+                    <p><strong>Through scientific research (R&D), local low cost manufacturing, and subsidies, Dr. Shakoh has reduced treatment to a fraction of the cost.</strong> Dr. Shakoh and donors also funded and built dialysis centers, so that we do not incur rent or equipment leasing costs. Imagine how with just $60 (15,000 rupees), you can provide haemodialysis for a month.</p>
                     
                     <div class="highlight-box">
                         <i class="fas fa-lightbulb"></i>
-                        <p>For patients below  with just $60 (15,000 rupees), you can provide haemodialysis for a month.</p>
-                    
-                    <div class="highlight-box">
-                        <i class="fas fa-lightbulb"></i>
-                        <p>For patients below 55 years of age55 years of age, the best treatment for end, the best treatment for end stage kidney stage kidney failure is a kidney transplant. This saves the family a lot of agony and financial burden, and the patient can failure is a kidney transplant. This saves the family a lot of agony and financial burden, and the patient can return to return to life as normal. Due to volunteer nephrologists life as normal. Due to volunteer nephrologists and surgeons, the cost of a transplant is greatly reduced. Most kidneys are donated by kin, and we also seek to widen programs for organ donation upon death.</ and surgeons, the cost of a transplant is greatly reduced. Most kidneys are donated by kin, and we also seek to widen programs for organ donation upon death.</p>
-                    </p>
+                        <p>For patients below 55 years of age, the best treatment for end stage kidney failure is a kidney transplant. This saves the family a lot of agony and financial burden, and the patient can return to life as normal. Due to volunteer nephrologists and surgeons, the cost of a transplant is greatly reduced. Most kidneys are donated by kin, and we also seek to widen programs for organ donation upon death.</p>
                     </div>
                 </div>
-                </div>
 
-div>
-
-                <!--                <!-- Summary -->
- Summary -->
-                               <div style <div style="text="text-align: center;-align: background: center; linear-gradient background: linear-gradient(135(135deg,deg, var(-- var(--cream), #fcream), #f0e0e9dd9dd); padding); padding: : 50px; border50px; border-radius: 30px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 20px; left: -radius: 30px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 20px; left: 20px20px; font; font-size:-size: 4rem; 4rem; color: rgba( color: rgba(11,79,108,11,79,108,0.0.05);05);">
-                       ">
-                        <i class=" <i class="fas fa-stethfas fa-stethoscope"></oscope"></i>
-i>
-                    </                    </div>
-div>
-                                       <div style <div style="position="position: relative: relative; z; z-index:-index: 2 2;">
-                       ;">
-                        <h3><i class <h3><i class="fas fa-heart" style="color:="fas fa-heart" style="color: var(-- var(--secondary); margin-rightsecondary); margin-right: : 10px10px;"></i;"></i> Solutions> Solutions for Public for Public Healthcare</ Healthcare</h3h3>
-                        <p>
-                        <p style=" style="font-sizefont-size: 1.: 1.1rem1rem;">Our;">Our solutions are based on solutions are based on public education public education for prevention for prevention and early treatment, and early treatment, broad training broad training of medical students and of medical students and physicians for physicians for early and late stage early and late stage treatment, treatment, scientific research scientific research for lower treatment cost for lower treatment cost, and, and establishing dialysis establishing dialysis centers and volunteer doctors centers and volunteer doctors. Together. Together, we can provide, we can provide access to access to kidney healthcare kidney healthcare for low to middle for low to middle income families.</p income families.</p>
-                   >
-                    </div </div>
-               >
-                </div </div>
-           >
-            </div </div>
-        </section>
-        </section>
-   >
-    </main </main>
-
-   >
-
-    <footer <footer class=" class="footer">
-footer">
-               <div class <div class="container="container">
-           ">
-            <div <div class class="="footer-contentfooter-content">
-               ">
-                <div <div class="footer-column footer-about">
-                    < class="footer-column footer-about">
-                    <h4h4>Hope Kidney Foundation>Hope Kidney Foundation</</hh4>
-                   4>
-                    <p> <p>ProvidingProviding free dialysis and kidney free dialysis and kidney care to low-income families in care to low-income families in Pakistan since 199 Pakistan since 1996.6. Your support Your support saves lives saves lives.</p.</p>
-                   >
-                    <div <div class=" class="social-links">
-social-links">
-                                               <a href <a href="#="#"><i class"><i class="="fabfab fa-face fa-facebook-fbook-f"></i></a"></i></a>
-                        <a>
-                        <a href="#"><i href="#"><i class="fab fa class="fab fa-twitter"></i-twitter"></i></></a>
-                       a>
-                        <a <a href="# href="#"><i"><i class=" class="fab fa-instagram"></i></afab fa-instagram"></i></a>
-                       >
-                        <a <a href="# href="#"><i"><i class="fab fa class="fab fa-youtube-youtube"></i"></i></a></a>
-                   >
-                    </div </div>
-                </div>
-                </div>
-                <div>
-                <div class=" class="footer-columnfooter-column footer-l footer-links">
-inks">
-                                       <h4 <h4>Quick>Quick Links</ Links</h4h4>
-                   >
-                    <ul <ul>
-                       >
-                        <li><a <li><a href=" href="index.htmlindex.html">Home</a">Home</a></li></li>
-                       >
-                        <li><a <li><a href="solution.html href="">Oursolution.html">Our Solution</a></li>
- Solution</a></                       li>
-                        <li><a href <li><a="cent href="centers.htmlers.html">Dialysis Centers">Dialysis Centers</a</a></li></li>
-                       >
-                        <li <li><a><a href="kidneys href="kidneys.html">.html">Your Kidneys</a></Your Kidneys</a></li>
-li>
-                                               <li <li><a href><a href="don="donate.htmlate.html">Donate</a></li>
-                        <li><a href">Donate</a></li>
-                        <li><a href="about="about.html">.html">About Us</aAbout Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column></li>
-                    </ul>
-                </div>
-                <div class="footer-column footer-contact footer-contact">
-                   ">
-                    <h <h4>Contact Us4>Contact Us</h</h4>
-                    <p4>
-                    <p><i class><i class="fas fa-map="fas fa-map-marker-marker-alt"></-alt"></i> 73i> 73/4/4 K Block, D K Block, DHA PhaseHA Phase 1, Lahore</p 1, Lahore</p>
-                   >
-                    <p <p><i class="fas fa-phone-alt"></><i class="fas fa-phone-alt"></i>i> 0300 8449319<br>0300 4586949</p>
- 0300 8449319<br>0300 4586949</p>
-                                       <p <p><i class><i class="fas fa-envelope"></="fas fa-envelope"></i>i> hopek hopekidneyidney19961996@gmail.com@gmail.com</p>
-                </div</p>
-                </div>
-               >
-                <div <div class=" class="footer-columnfooter-column footer-hours footer-hours">
-                    <h4>">
-                    <h4>Dialysis Centers</Dialysis Centers</h4h4>
-                    <>
-                    <p><ip><i class=" class="fas fa-hospital"></fas fa-hospital"></i>i> Sir G Sir Ganga Ramanga Ram Hospital</ Hospital</p>
-                   p>
-                    <p><i class <p><i class="fas fa-hospital"></i> Mayo Hospital</p>
-                    <p><i class="fas fa-hospital"></i="fas fa-hospital"></i> Mayo Hospital</p>
-                    <p><i class="fas fa-hospital"></i> Gul> Gulab Deviab Devi Hospital</p>
+                <!-- Summary -->
+                <div style="text-align: center; background: linear-gradient(135deg, var(--cream), #f0e9dd); padding: 50px; border-radius: 30px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 20px; left: 20px; font-size: 4rem; color: rgba(11,79,108,0.05);">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                        <h3><i class="fas fa-heart" style="color: var(--secondary); margin-right: 10px;"></i> Solutions for Public Healthcare</h3>
+                        <p style="font-size: 1.1rem;">Our solutions are based on public education for prevention and early treatment, broad training of medical students and physicians for early and late stage treatment, scientific research for lower treatment cost, and establishing dialysis centers and volunteer doctors. Together, we can provide access to kidney healthcare for low to middle income families.</p>
+                    </div>
                 </div>
             </div>
- Hospital</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <h4>Hope Kidney Foundation</h4>
+                    <p>Providing free dialysis and kidney care to low-income families in Pakistan since 1996. Your support saves lives.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="solution.html">Our Solution</a></li>
+                        <li><a href="centers.html">Dialysis Centers</a></li>
+                        <li><a href="kidneys.html">Your Kidneys</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 73/4 K Block, DHA Phase 1, Lahore</p>
+                    <p><i class="fas fa-phone-alt"></i> 0300 8449319<br>0300 4586949</p>
+                    <p><i class="fas fa-envelope"></i> hopekidney1996@gmail.com</p>
+                </div>
+                <div class="footer-column footer-hours">
+                    <h4>Dialysis Centers</h4>
+                    <p><i class="fas fa-hospital"></i> Sir Ganga Ram Hospital</p>
+                    <p><i class="fas fa-hospital"></i> Mayo Hospital</p>
+                    <p><i class="fas fa-hospital"></i> Gulab Devi Hospital</p>
                 </div>
             </div>
-                       <div <div class="footer class="footer-bottom">
--bottom">
-                               <p>&copy; <p>&copy; 2025 Hope 2025 Hope Kidney Foundation Kidney Foundation. All. All rights reserved. | rights reserved. | Registered Charity Registered Charity in Pakistan in Pakistan</p</p>
-           >
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hope Kidney Foundation. All rights reserved. | Registered Charity in Pakistan</p>
             </div>
         </div>
-        </div </div>
-   >
     </footer>
 
-    </footer>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
 
-    <script <script>
-        // Mobile>
-        // Mobile menu toggle menu toggle
-       
-        const hamb const hamburger =urger = document.querySelector('.h document.querySelector('.hamburger');
-       amburger');
-        const nav const navMenu =Menu = document.querySelector document.querySelector('.nav('.nav-menu');
--menu');
-        const dropdowns        const dropdowns = document.querySelectorAll = document('.dropdown.querySelectorAll');
-
-        if (('.dropdown');
-
-        if (hambhamburger)urger) {
-            {
-            hamburger hamburger.addEventListener('click', () =>.addEventListener('click', () => {
-                {
-                hamburger hamburger.classList.t.classList.toggle('active');
-oggle('active');
-                nav                navMenu.classListMenu.classList.toggle.toggle('active');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
             });
         }
 
